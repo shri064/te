@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>HellMan Key Exchange</title>
+    </head>
+    <body>
+        <h2>HellMan Key Exchange</h2>
+    <script>
+        function power(a, b, p){
+            if(b == 1){
+                return a;
+            }
+            else{
+                return (Math.pow(a, b)%p);
+            }
+        }
+
+        var P, G, a, x, b, y, ka, kb;
+
+        P = 23;
+        document.write("The value of P : "+P+ "<br>");
+
+        G = 10;
+        document.write("The value of G : "+G+"<br>");
+
+        a = 5;
+        document.write("The private key for Alice : "+a+"<br>");
+        x = power(G, a, P);
+
+        b = 3;
+        document.write("The private key for Bob : "+b+ "<br>");
+        y = power(G, b, P);
+
+        ka = power(y, a, P);
+        kb = power(x, b, P);
+
+        document.write("The secrete key for Alice : "+ka+"<br>");
+        document.write("The secrete key for Bob : "+kb+"<br>");
+
+    </script>
+</body>
+</html>
