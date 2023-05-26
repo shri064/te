@@ -8,7 +8,7 @@ responses = {
 }
 
 def chat_response(user_input):
-    if user_input.lower() == responses:
+    if user_input.lower() in responses:
         return random.choice(responses[user_input.lower()])
     else:
         return random.choice(responses['default'])
